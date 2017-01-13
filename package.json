@@ -19,5 +19,8 @@
   "devDependencies": {
     "flow-immutable-models": "^0.9.2",
     "jscodeshift": "^0.3.30"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1"
   }
 }
