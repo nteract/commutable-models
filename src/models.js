@@ -1,10 +1,13 @@
 import * as Immutable from 'immutable'; // This is required
 import ImmutableModel from 'flow-immutable-models'; // Make sure you copied this file into your repo
 
-export type ImmutableJSON = | string | number | boolean | null
-                            | ImmutableJSONMap | ImmutableJSONList; // eslint-disable-line no-use-before-define
+/*
+export type ImmutableJSON = string | number | boolean | null | ImmutableJSONMap | ImmutableJSONList; // eslint-disable-line no-use-before-define
 export type ImmutableJSONMap = Immutable.Map<string, ImmutableJSON>;
 export type ImmutableJSONList = Immutable.List<ImmutableJSON>;
+*/
+
+export type ImmutableJSON = any;
 
 export type ExecutionCount = number | null;
 
