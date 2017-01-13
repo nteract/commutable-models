@@ -4,7 +4,7 @@
   "description": "Experimenting with commutable and flow-immutable-models",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate:models": "jscodeshift -t ./node_modules/flow-immutable-models/lib/transform.js ./src/models.js"
   },
   "repository": {
     "type": "git",
