@@ -1,0 +1,19 @@
+{
+  "name": "commutable-models",
+  "version": "1.0.0",
+  "description": "Experimenting with commutable and flow-immutable-models",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nteract/commutable-models.git"
+  },
+  "author": "Kyle Kelley",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/nteract/commutable-models/issues"
+  },
+  "homepage": "https://github.com/nteract/commutable-models#readme"
+}
