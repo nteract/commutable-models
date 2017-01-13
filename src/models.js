@@ -1,13 +1,16 @@
-import * as Immutable from 'immutable'; // This is required
-import ImmutableModel from 'flow-immutable-models'; // Make sure you copied this file into your repo
+import * as Immutable from 'immutable';
+import ImmutableModel from 'flow-immutable-models';
 
 /*
+Reducing complexity a bit here by removing the one recursive type.
+
 export type ImmutableJSON = string | number | boolean | null | ImmutableJSONMap | ImmutableJSONList; // eslint-disable-line no-use-before-define
 export type ImmutableJSONMap = Immutable.Map<string, ImmutableJSON>;
 export type ImmutableJSONList = Immutable.List<ImmutableJSON>;
 */
 
 export type ImmutableJSON = any;
+export type ImmutableJSONMap = any;
 
 export type ExecutionCount = number | null;
 
@@ -75,7 +78,7 @@ export type NotebookMetadataModelType = {
   language_info: LanguageInfoMetadataModelType,
 }
 
-export type Notebook = {
+export type NotebookModelType = {
   cellMap: Immutable.Map<string, CellModelType>,
   cellOrder: Immutable.List<string>,
   nbformat: 4,
