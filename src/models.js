@@ -17,48 +17,48 @@ export type ExecutionCount = number | null;
 export type MimeBundle = Immutable.Map<string, ImmutableJSON>;
 
 export type ExecuteResultModelType = {
-  output_type: 'execute_result',
+  output_type: string, //'execute_result',
   execution_count: ExecutionCount,
   data: MimeBundle,
   metadata: ImmutableJSONMap,
 }
 
 export type DisplayDataModelType = {
-  output_type: 'display_data',
+  output_type: string, // 'display_data',
   data: MimeBundle,
   metadata: ImmutableJSONMap,
 }
 
 export type StreamOutputModelType = {
-  output_type: 'stream',
-  name: 'stdout' | 'stderr',
+  output_type: string, // 'stream',
+  name: string, // 'stdout' | 'stderr',
   text: string,
 }
 
 export type ErrorOutputModelType = {
-  output_type: 'error',
+  output_type: string, // 'error',
   ename: string,
   evalue: string,
   traceback: Immutable.List<string>,
 }
 
-export type OutputModelType = ExecuteResultModelType | DisplayDataModelType | StreamOutputModelType | ErrorOutputModelType;
+export type Output = ExecuteResultModelType | DisplayDataModelType | StreamOutputModelType | ErrorOutputModelType;
 
 export type CodeCellModelType = {
-  cell_type: 'code',
+  cell_type: string, // 'code',
   metadata: ImmutableJSONMap,
   execution_count: ExecutionCount,
   source: string,
-  outputs: Immutable.List<OutputModelType>,
+  outputs: Immutable.List<Output>,
 }
 
 export type MarkdownCellModelType = {
-  cell_type: 'markdown',
+  cell_type: string, // 'markdown',
   source: string,
   metadata: ImmutableJSONMap,
 }
 
-export type CellModelType = MarkdownCellModelType | CodeCellModelType;
+export type Cell = MarkdownCellModelType | CodeCellModelType;
 
 export type KernelspecMetadataModelType = {
   name: string,
@@ -79,9 +79,9 @@ export type NotebookMetadataModelType = {
 }
 
 export type NotebookModelType = {
-  cellMap: Immutable.Map<string, CellModelType>,
+  cellMap: Immutable.Map<string, Cell>,
   cellOrder: Immutable.List<string>,
-  nbformat: 4,
-  nbformat_minor: 0 | 1 | 2 | 3 | 4,
+  nbformat: number, // 4,
+  nbformat_minor: number, // 0 | 1 | 2 | 3 | 4,
   metadata: NotebookMetadataModelType,
 }
